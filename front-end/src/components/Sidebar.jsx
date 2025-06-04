@@ -10,6 +10,10 @@ const Sidebar = () => {
 
 const {onlineUsers}= useAuthStore();
 const [showOnlineOnly, setShownOnlineOnly]=useState(false);
+const { user: currentUser } = useAuthStore();
+
+const filteredOnlineUsers = onlineUsers.filter(id => id !== currentUser?._id);
+
 
   useEffect(() => {
     getUsers();
@@ -38,7 +42,7 @@ const [showOnlineOnly, setShownOnlineOnly]=useState(false);
             />
             <span className="text-sm">Show online only</span>
           </label>
-          <span className="text-xs text-zinc-500">({onlineUsers.length - 1} online)</span>
+          <span className="text-xs text-zinc-500">({filteredOnlineUsers.length} online)</span>
         </div>
       </div>
 
