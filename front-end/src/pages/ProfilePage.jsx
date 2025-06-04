@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useAuthStore } from '../store/useAuthStore'
 import { Camera, Mail, User } from 'lucide-react'
 
+
 const ProfilePage = () => {
   const {authUser, isUpdatingProfile, updateProfile }= useAuthStore()
   const [selectedImg, setSelectedImg]=useState(null);
@@ -14,7 +15,7 @@ const ProfilePage = () => {
     reader.onload=async ()=>{
       const base64Image= reader.result;
       setSelectedImg(base64Image);
-      await updateProfile({ profilePic:base64Image})
+      await updateProfile({ profilePic:base64Image});
     };
   };
   return (

@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 app.use(cookieParser());
 
-const PORT =process.env.PORT
+const PORT =process.env.PORT;
 
 // ✅ This line is crucial to parse incoming JSON requests
 app.use(express.json());
@@ -22,7 +22,7 @@ app.use(cors({
 }))
 
 app.use("/api/auth",authRoutes);
-app.use("/api/message",messageRoutes);
+app.use("/api/messages",messageRoutes);
 
 app.listen(PORT,()=>{
     console.log("server is running on PORT:" + PORT);
