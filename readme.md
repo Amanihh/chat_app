@@ -49,16 +49,18 @@ npm install
 ```
 
 2. Create a .env file inside /backend with the following:
+```env
 PORT=3001
 JWT_KEY=your_jwt_secret
-MONGO_URL=your_mongodb_uri
+MONGO_URL=your_mongodb_url
+```
 
 # Cloudinary Credentials
-
+```env
 CLOUDINARY_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_cloudinary_key
 CLOUDINARY_API_SECRET=your_cloudinary_secret
-
+```
 
 3. Start the backend server:
 ```bash
@@ -74,11 +76,14 @@ npm install
 ```
 
 2. Create a .env file inside /frontend with the following:
+```env
 VITE_SERVER_URL=http://localhost:3001
-
+```
 3. Start the frontend development server:
 ```bash
 npm run dev
+```
+```env
 Visit http://localhost:3000 in your browser.
 ```
 
@@ -86,10 +91,11 @@ Visit http://localhost:3000 in your browser.
 All file uploads (e.g., profile pictures, chat media) are handled using Cloudinary.
 
 Make sure the following environment variables are correctly set in your backend .env file:
+```env
 CLOUDINARY_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_cloudinary_key
 CLOUDINARY_API_SECRET=your_cloudinary_secret
-
+```
 The backend uses the Cloudinary Node SDK for secure uploads:
 cloudinary.uploader.upload(filePath, options)
 
